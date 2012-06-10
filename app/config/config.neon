@@ -9,9 +9,9 @@ common:
 		database:
 			driver: pdo_mysql
 			host: localhost
-			dbname: ba_brainarchitect_net
-			user: ba_brainarchitect_net
-			password: r1hwpnk0s8
+			dbname: <database_name>
+			user: <your_username>
+			password: <your_password>
 
 
 	php:
