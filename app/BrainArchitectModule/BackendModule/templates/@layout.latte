@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="description" content="">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+        <title>Brain Architect - Administration</title>
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/admin/css/screen.css" type="text/css">
+
+	{block head}{/block}
+    </head>
+
+    <body>
+
+        <div id="header">
+            <h1>Brain Architect - Administration Panel</h1>
+            <ul id="navigation">
+                <li><a href="{plink Users:default}">Users</a></li>
+                <li><a href="{plink Projects:default}">Projects</a></li>
+                <li><a href="{plink Packages:default}">Packages</a></li>
+                <li><a href="{plink Auth:logout}">Logout</a></li>
+            </ul>
+        </div>
+
+        <div class="clear"></div>
+
+        <div id="content">
+
+            {foreach $flashes as $flash}
+                <div class="flash {$flash->type}">{$flash->message}</div>
+            {/foreach}
+
+            {include #content}
+        </div>
+
+    </body>
+</html>

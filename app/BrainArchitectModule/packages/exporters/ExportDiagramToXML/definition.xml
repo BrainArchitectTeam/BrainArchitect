@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <name>ExportDiagramToXML</name>
+    <title>Export diagram to XML</title>    
+    <version>1.0</version>
+    <author>Brain Architect Team</author>
+    <type>diagram exporter</type>
+    <label>To XML</label>
+    <description>Enables export diagram to xml.</description>
+    <resources>
+        <item src='register.js' />
+    </resources>
+</package>

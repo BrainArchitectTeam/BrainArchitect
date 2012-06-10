@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="description" content="Brain Architect - Online UML Tool for analyze & design software & bussines">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+        <title>Brain Architect - Online UML Tool</title>
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/css/jquery-ui.css" type="text/css">
+        
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/css/editor.css" type="text/css">
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/css/jsScrollPane.css" type="text/css">
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+
+        <script type="text/javascript" src="{$basePath}/public/ba/js/netteForms.js"></script>
+
+        
+        <script type="text/javascript" src="{$basePath}/public/ba/js/ba/jquery.nette.js"></script>
+
+        <script type="text/javascript" src="{$basePath}/public/ba/js/plugins/tiptip/jquery.tipTip.minified.js"></script>
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/js/plugins/tiptip/tipTip.css" type="text/css">
+
+        <!-- PLUGINS -->
+        
+        <script type="text/javascript" src="{$basePath}/public/ba/js/ba/jquery.fcbkcomplete.min.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/ba/jquery.contextmenu.r2.packed.js"></script>
+
+        <!-- DIAGRAMS LIBRARIES -->
+
+        <script type="text/javascript" src="{$basePath}/public/ba/js/last.build.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/dev/dev.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/BALI.js"></script>
+        
+        <script type="text/javascript" src="{$basePath}/public/ba/js/jsScrollPane.js"></script>
+
+	{block head}{/block}
+    </head>
+
+    <body>
+    
+        <div id="loading-screen">
+            <div id="loading-screen-message" class="rounder-6">
+                <div class="p16">
+                    <img alt="Brain Architect - Online UML Tool" src="/public/ba/images/logotyp-white.png" />
+                    <img src="/public/ba/images/editor/process.gif" alt="Brain Architect - Online UML Tool" class="animation"><br />
+                    Loading ...
+                </div>
+            </div>
+        </div>
+
+        <div id="top-panel-wrapper" class="hidden">
+            <h1>Brain Architect</h1>
+
+        <div class="r" id="user-navigation">
+            {snippet userNavigation}
+
+                {if $user}
+            <div class="l" id="current-user">{$user->getUsername()}</div>
+            <ul>
+                
+                <li>
+                    <a class="l" id="nav-settings" href="#">Settings</a>
+                    <ul class="rounded-lb">
+                        <li><a href="{plink accountSettings}" class="content-window-open ajax" id="nav-account-settings"><span>Account&nbsp;settings</span></a></li>
+                        <li><a href="#" id="nav-help"><span>Help</span></a></li>
+                        <li><a class="ajax" href="{plink logout!}" id="nav-logout"><span>Log&nbsp;out</span></a></li>
+                    </ul>
+                </li>
+            </ul>
+                {else}
+            <a href="#" id="nav-signin" class="l">Sign in</a>
+                {/if}
+            {/snippet}
+        </div>          
+
+    </div>
+
+
+
+    <div id="canvas" class="hidden">               
+
+        <div id="papers-wrapper" class="hidden">
+            
+        </div>
+
+        <div id="toolbar" class="hidden">
+            <span class="header">Tools</span>
+        </div>
+
+    </div>
+
+    <div id="overlay" {if $user}class="hidden"{/if}></div>
+    <div id="process-overlay" class="hidden"></div>
+
+    <div id="process-screen">
+        <div class="p16">
+            <img alt="Brain Architect - Online UML Tool" src="/public/ba/images/logotyp-white.png"> <br />
+            <img class="animation" alt="Brain Architect - Online UML Tool" src="/public/ba/images/editor/process.gif"> <br />
+            Processing...
+        </div>
+    </div>
+
+    <div id="editor-messages"></div>
+
+    <div id="content-window-wrapper" class="rounder-6">
+        <div class="p8">
+
+            <div id="content-window-messages">
+            {snippet contentWindowFlashes div}
+                {foreach $flashes as $flash}
+                    {if $flash->type == 'contentWindowInfo' || $flash->type == 'contentWindowError'}
+                        <div class="flash {$flash->type}">
+                            <span>{!$flash->message}</span>
+                        </div>
+                    {/if}
+                {/foreach}
+            {/snippet}
+            </div>
+
+            <div id="content-window" class="rounder-6">
+                {snippet contentWindow}
+                    {include #contentWindow}
+                {/snippet}
+            </div>
+        </div>
+    </div>
+
+    <div id="login-wrapper" {if $user}class="hidden"{/if}>
+
+        <div id="login-messages">
+            {snippet flashes div}
+                {foreach $flashes as $flash}
+                    {if $flash->type == 'login-error'}
+            <div class="flash {$flash->type}">
+                <span>{!$flash->message}</span>
+            </div>
+                    {/if}
+                {/foreach}
+            {/snippet}
+        </div>
+
+        {form loginForm class=>"rounder-6 ajax"}
+        <div class="content rounder-6">
+            <h2>Brain Architect Authentication</h2>
+
+            {input login} {input password} {input signin class => 'button r'}
+
+            <div class="clear"></div>
+            <div class="bottom">
+                {input remember_me} {label remember_me /}            
+                <span class="separator">·</span> <a target="_blank" class="external" href="{plink Account:forgotPassword}">Forgot password?</a> <span class="separator external">·</span> 
+                <a target="_blank" href="{plink Account:register}" class="external">Create Account</a>
+                <span class="separator">·</span> <a href="#" class="blue" id="nav-try-it"><strong>Try it!</strong></a>
+            </div>
+
+        </div>
+        {/form}
+    </div>
+
+    <div id="footer-panel-wrapper" class="hidden">
+
+        <div id="opened-tabs" class="l"></div>
+
+        <div class="r" id="copyright">
+            <img src="/public/ba/images/icons/cat.png" class="l" alt="" /> 
+            <span class="r">© Brain Architect Team</span>
+        </div>
+    </div>
+
+</body>
+</html>

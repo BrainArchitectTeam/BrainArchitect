@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <title>Use Case diagram</title>
+    <type>usecasediagram</type>
+    <author>Brain Architect Team</author>
+    <description>Structure diagram</description>
+    <version>1.0</version>
+    <resources>
+        <item src="brainarchitect-usecase.js" name="Brain Architect Use Case Diagram Javascript definition" />
+    </resources>
+</package>

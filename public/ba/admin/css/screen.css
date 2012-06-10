@@ -1,0 +1,69 @@
+/**
+ *  CSS of Brain Architect Application
+ *  @url: brainarchitect.net
+ *  @author: Franta Toman (www.frantatoman.cz) / Brain Architect Team Leader 
+ */
+
+/* reset */ 
+ html,body,div,span,applet,object,iframe, h1,h2,h3,h4,h5,h6,p,blockquote,pre, a,abbr,acronym,address,big,cite,code, del,dfn,em,img,ins,kbd,q,s,samp, small,strike,strong,sub,sup,tt,var, b,u,i,center, dl,dt,dd,ol,ul,li, fieldset,form,label,legend, table,caption,tbody,tfoot,thead,tr,th,td, article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary, time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after, q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/* default */
+html, body{ background: #252b31 url("../../images/noise-bg-dark.jpg"); padding: 0; margin: 0; height: 100%; font-family: Arial, sans-serif; font-size: 14px; color: #fff}
+a{ color: #77A6D5; text-decoration: none }
+a:hover{ color: #fff }
+strong, h2{ font-weight: bold; }
+h2{ font-size: 26px; margin-bottom: 26px }
+h3{ font-size: 20px; margin-bottom: 20px }
+h4{ font-size: 16px; margin-bottom: 14px; font-weight: bold }
+p{ margin-bottom: 20px }
+
+.clear{ clear: both }
+
+/* table */
+
+table{ margin-bottom: 20px }
+table td, table th{ padding: 4px }
+
+.list{  }
+.list td, .list th{ border: 1px solid #44484D; font-size: 13px }
+.list th{ background: #44484D }
+
+/* forms */
+
+select, input, textarea{ font-size: 12px; font-family: Arial, sans-serif; padding: 8px; border: 0 }
+
+/* login form */
+
+#login-form{ margin: 0 auto; position: relative; top: 50px; background: url("../../images/noise-bg-light.jpg"); width: 242px; box-shadow: 0 0 1px #000000;border: 1px solid #40454A; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; padding: 20px 20px 0 20px; }
+
+/* header */
+
+#header{ background: url("../../images/editor/panel-bg.png") repeat scroll 0 0 transparent; width: 100%;height: 39px; }
+#header h1{ margin-left: 20px; background: url("../../images/logotyp-white.png"); width: 241px; height: 36px; text-indent: -9999px; float: left }
+
+/* navigation */
+
+#navigation{ float: left; margin-left: 40px }
+#navigation li { float: left;  }
+#navigation li a{ display: block; padding: 12px 10px  }
+
+/* submenu*/
+
+#submenu{ display: block; padding: 10px 0; float: left; border-top: 1px solid #44484D; border-bottom: 1px solid #44484D; width: 100%; margin-bottom: 20px  }
+#submenu li{ float: left; padding: 0 16px 0 0 }
+
+/* content */
+#content{ padding: 20px }
+
+/* flash messages */
+.flash{  border-radius: 6px 6px 6px 6px; -moz-border-radius: 6px 6px 6px 6px; -webkit-border-radius: 6px 6px 6px 6px;margin-bottom: 2px;padding: 8px; margin-bottom: 30px  }
+.info{ background: url("../../images/bg-gradient-green.png") repeat scroll 0 0 #7EA94C;border-top: 1px solid #BED7A0;text-shadow: 0 -1px 0 #536F32; -moz-text-shadow: 0 -1px 0 #536F32; -webkit-text-shadow: 0 -1px 0 #536F32; }
+.error{ background: url("../images/bg-gradient-red.png") repeat scroll 0 0 #CA4541;border-top: 1px solid #E38885;text-shadow: 0 -1px 0 #852E2C;-moz-text-shadow: 0 -1px 0 #852E2C;-webkit-text-shadow: 0 -1px 0 #852E2C; }

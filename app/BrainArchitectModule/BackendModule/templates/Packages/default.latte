@@ -1,0 +1,31 @@
+{block content}
+
+{include 'submenu.latte'}
+
+{if $list}
+    <table class="list">
+
+        <thead>
+            <tr>
+                <th>title</th>
+                <th>type</th>
+                <th>version</th>
+                <th>description</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        
+        <tbody>
+            <tr n:foreach="$list as $package">
+                <td>{$package->getTitle()}</td>
+                <td>{$package->getType()}</td>
+                <td>{$package->getVersion()}</td>
+                <td>{$package->getDescription()}</td>
+                <td>{if $package->isActive()}<a href="{plink deactivate! $package->getId()}">deactivate</a>{else}<a href="{plink activate! $package->getId()}">activate</a>{/if}</td>
+            </tr>
+        </tbody>
+    </table>
+{else}
+<p>No diagram packages installed.</p>
+{/if}

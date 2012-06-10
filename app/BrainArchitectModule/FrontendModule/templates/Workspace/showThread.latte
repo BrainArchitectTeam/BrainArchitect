@@ -1,0 +1,24 @@
+{block contentWindow}
+    <div class="title">
+        <div class="p8">
+            <img src="/public/images/icons/talk.png" />
+                Message detail
+                <a href="#" id="content-window-close" class="r">close</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="p16">
+            <a href="{plink writeMessage}">WriteMessage</a>
+
+            <ul n:if="$thread">
+                <li n:foreach="$thread->getMessages() as $message">
+                    {$message->getAuthor()->getUsername()}<br />
+                    {$message->getContent()}
+                </li>
+            </ul>
+
+            {control answerForm}
+
+        </div>
+    </div>
+{/block}

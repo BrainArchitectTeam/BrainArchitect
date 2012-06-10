@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <name>ExportDiagramToImage</name>
+    <title>Export to image file</title>    
+    <version>1.0</version>
+    <author>Brain Architect Team</author>
+    <type>diagram</type>
+    <label>To image</label>
+    <description>Enables export diagram into image file.</description>
+    <resources>
+        <item src='register.js' />
+    </resources>
+</package>

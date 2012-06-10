@@ -1,0 +1,59 @@
+/**
+ *  CSS of Brain Architect Application
+ *  @url: brainarchitect.net
+ *  @author: Franta Toman (www.frantatoman.cz) / Brain Architect Team Leader 
+ */
+
+/* reset */ 
+ html,body,div,span,applet,object,iframe, h1,h2,h3,h4,h5,h6,p,blockquote,pre, a,abbr,acronym,address,big,cite,code, del,dfn,em,img,ins,kbd,q,s,samp, small,strike,strong,sub,sup,tt,var, b,u,i,center, dl,dt,dd,ol,ul,li, fieldset,form,label,legend, table,caption,tbody,tfoot,thead,tr,th,td, article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary, time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after, q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/* default */
+html, body{ background: #252b31 url(../images/noise-bg-dark.jpg); padding: 0; margin: 0; font-family: Arial, sans-serif; font-size: 12px; color: #fff }
+body{ margin-top: 30px }
+a{ text-decoration: none }
+strong{ font-weight: bold }
+
+.l{float:left}
+.r{float:right}
+.clear{ clear: both }
+.content-box{ width: 960px; margin: 0 auto }
+.hidden{ display: none }
+
+/* header */
+#header{ display: block; text-align: center; margin-bottom: 17px }
+
+/* wrapper */
+#wrapper{ -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; background: url("../images/noise-bg-light.jpg") repeat scroll 0 0 transparent;border: 1px solid #40454A;box-shadow: 0 0 1px #000000;color: #FFFFFF; margin: 0 auto;text-shadow: 0 -1px 0 #000000;width: 385px; text-align: justify; }
+#wrapper .content{ padding: 21px 27px }
+#wrapper h1{ font-size: 18px; font-weight: 600; margin-bottom: 9px; font-family: 'Open Sans', Arial, sans-serif }
+#wrapper p{ color: #c9c9c9; line-height: 20px; margin-bottom: 14px }
+
+form label{ font-weight: bold; font-size: 13px }
+form table{ width: 100% }
+form input{ background: #fff;border: 1px solid #272a34;border-radius: 6px 6px 6px 6px;box-shadow: 0 1px 0 #7b7f81;color: #939499;font-size: 13px;margin-bottom: 11px;padding: 6px}
+
+form .button, .button{ background: url(../images/noise-bg-blue.jpg); margin-bottom: 2px; box-shadow: 0 2px 0 #476d9c; border: 0; font-family: 'Open Sans', Arial, sans-serif; font-size: 16px; color: #fff; font-weight: 600; text-shadow: 0 -1px 0 #435c7b; padding: 3px 0; cursor: pointer; display: block; width: 100%; -webkit-border-radius: 6px; -moz-border-radius: 6px; border-radius: 6px; }
+form .button:active, .button:active{ box-shadow: 0 0; margin-top: 2px; margin-bottom: 0; }
+
+.button{ text-align: center;line-height: 26px }
+
+/* messages, errors, notifications */
+a[href^="error:"] {background: red;color: white;}
+
+#messages{ margin: 0 auto; width: 385px; }
+#messages .flash{ color: #fff; border-radius: 6px; -webkit-border-radius: 6px; -moz-border-radius: 6px; padding: 9px 11px; margin-bottom: 10px }
+#messages .flash span{ padding: 2px 25px }
+#messages .flash a{ color: #fff; text-decoration: underline }
+#messages .flash a:hover{ text-decoration: none }
+#messages .info{ text-shadow: 0 -1px 0 #536f32; background: #7ea94c url(../images/bg-gradient-green.png); border-top: 1px solid #bed7a0 }
+#messages .info span{ background: url(../images/icons/info.png) no-repeat }
+#messages .error{ text-shadow: 0 -1px 0 #852e2c; border-top: 1px solid #e38885; background: #ca4541 url(../images/bg-gradient-red.png) }
+#messages .error span{ background: url(../images/icons/error.png) no-repeat }

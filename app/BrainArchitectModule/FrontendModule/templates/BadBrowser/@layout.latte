@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="description" content="Brain Architect - Online UML Tool for analyze & design software & bussines">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+        <title>Brain Architect - Bad Browser!</title>
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/css/error.css" type="text/css">
+        <link rel="shortcut icon" href="{$basePath}/favicon.ico" type="image/x-icon">
+        
+	{block head}{/block}
+    </head>
+    <body>
+        <div id="wrapper">
+           <div class="content">
+                <div id="header">
+                    <img src="/public/images/logotyp-white.png" alt="Brain Architect - Online UML Tool" />
+                </div>
+            {block content}{/block}
+            </div>
+        </div>
+    </body>
+</html>

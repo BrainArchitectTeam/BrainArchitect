@@ -1,0 +1,50 @@
+{block}
+
+<div class="title">
+    <div class="p8">
+        Export project to XML
+        <a class="r" id="content-window-close" href="#">close</a>
+    </div>
+</div>
+
+<div class="tabs">
+    <div class="l">
+        <a class="ajax export-diagram-to-image" n:href="export">EXPORT</a>
+    </div>
+
+    <div class="clear"></div>
+</div>
+
+<div id="result-window">
+{if isset($result)} 
+    <code class="result">
+        <p class="p12 fs11">
+            {$result}
+        </p>
+    </code>
+{else}
+    <p class="p12">
+    Choose one of image format above!
+    </p>
+{/if}
+</div>
+
+
+{syntax}
+
+<script type="text/javascript">
+    $(document).ready(function(){        
+
+        $('.export-diagram-to-image').click(function(){
+            var project = App.getProject();
+            var json = { 
+                project: project.getProjectJSON(),
+                diagrams: project.getDiagramsJSON()};
+
+            App.sendExporterData( this.href, json);
+            return false;
+        });
+
+    });
+</script>
+{/syntax}

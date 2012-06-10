@@ -1,0 +1,28 @@
+{block #content}
+
+<h2>Project details</h2>
+
+{include 'submenu.latte'}
+
+<table>
+    <tbody>
+        <tr><td><strong>Title:</strong></td><td> {$entityDetail->getTitle()} -  <a href="{plink edit $entityDetail->getId()}">Edit project</a></td></tr>
+        <tr><td><strong>Description:</strong></td><td> {$entityDetail->getDescription()}</td></tr>
+   </tbody>
+</table>
+
+<h3>Diagrams</h3>
+
+{if $entityDetail->getDiagrams()}
+<table>
+    <tbody>
+    {foreach $entityDetail->getDiagrams() as $diagram}
+        <tr>
+            <td>{$diagram->getTitle()}</td>
+        </tr>
+    {/foreach}
+    </tbody>
+</table>
+{else}
+<p>No diagrams.</p>
+{/if}

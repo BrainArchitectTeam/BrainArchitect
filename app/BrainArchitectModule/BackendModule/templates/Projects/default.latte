@@ -1,0 +1,34 @@
+{block content}
+
+<h2>Projects</h2>
+
+{include 'submenu.latte'}
+
+{if $list}
+<table class="list" n:if="$list">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Owner</th>
+            <th>Created</th>
+            <th>Last update</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr n:foreach="$list as $item">            
+            <td>{$item->getTitle()}</td>         
+            <td>{if $item->getOwner()}{$item->getOwner()->getUsername()}{else}<em>nonexists</em>{/if}</td>
+            <td>{$item->getCreated()|date:'%d.%m.%Y, %H:%M:%S'}</td>
+            <td>{$item->getUpdated()|date:'%d.%m.%Y, %H:%M:%S'}</td>
+            <td><a href="{plink detail $item->getId()}">show detail</a></td>   
+            <td><a href="{plink edit $item->getId()}">edit</a></td>
+            <td><a href="{plink delete $item->getId()}">delete</a></td>
+        </tr>
+    </tbody>
+</table>
+{else}
+<p>No projects.</p>
+{/if}

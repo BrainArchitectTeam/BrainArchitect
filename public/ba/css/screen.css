@@ -1,0 +1,106 @@
+/**
+ *  CSS of Brain Architect Application
+ *  @url: brainarchitect.net
+ *  @author: Franta Toman (www.frantatoman.cz) / Brain Architect Team Leader 
+ */
+
+/* reset */ 
+ html,body,div,span,applet,object,iframe, h1,h2,h3,h4,h5,h6,p,blockquote,pre, a,abbr,acronym,address,big,cite,code, del,dfn,em,img,ins,kbd,q,s,samp, small,strike,strong,sub,sup,tt,var, b,u,i,center, dl,dt,dd,ol,ul,li, fieldset,form,label,legend, table,caption,tbody,tfoot,thead,tr,th,td, article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary, time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+body{line-height:1;}
+ol,ul{list-style:none;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after, q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+
+/* default */
+html, body{ background: #101417 url("../images/noise-bg-light.jpg"); padding: 0; margin: 0; font-family: 'Open Sans'; font-size: 12px; color: #fff }
+body{ }
+
+a{ text-decoration: none }
+em{ font-style: italic }
+abbr{ border-bottom: 1px dotted #ccc; cursor: help }
+
+.l{float:left}
+.r{float:right}
+.clear{ clear: both }
+.content-box{ width: 960px; margin: 0 auto }
+.hidden{ display: none }
+
+/* form elements */
+input, textarea{ padding: 6px 6px; font-size: 13px; font-family: 'Open Sans', Arial; border: none; margin-bottom: 8px}
+label{ margin-right: 30px }
+form .button{ background:  #77A6D5; color: #fff; padding: 10px 30px; border: 0; display: block; } 
+
+/* header */
+/*#header{ padding-top: 20px; background: #eee url(../images/header-bg.png) repeat-x; float: left; width: 100% }*/
+#header{ padding-top: 20px; background: #fff repeat-x; float: left; width: 100% }
+#header h1{ width: 241px; height: 35px; float: left; text-indent: -9999px; background: url(../images/logotyp.png); margin-bottom: 20px }
+#header h1 a{ display: block; height: 35px }
+
+#header ul{ float: right; padding-top: 11px }
+#header ul li{ float: left }
+#header ul li a{ color: #252b31; font-size: 12px; font-weight: 600;text-transform: uppercase; margin-left: 20px }
+#header ul li a:hover{ color: #8899aa }
+
+#header ul li a img{ position: relative; top: -1px }
+#header ul li a:hover img{ opacity: 0.5 }
+
+#welcome{ text-align: center; width: 100%; padding-bottom: 40px; color: #252b31; margin-top: 20px }
+#welcome h2{ font-size: 42px; margin-bottom: 20px }
+#welcome h2 em{ font-size: 20px; color: #9999aa }
+#welcome strong{ font-weight: 600; color: #9999aa }
+
+#welcome-fb-like{ margin-bottom: 40px }
+
+#welcome .button-try{ background: #363d45; border-radius: 6px; -moz-border-radius: 6px; -webkit-border-radius: 6px; }
+
+/* loading */
+#loading{ margin: 0 auto; width: 200px; text-align: center; display: none; margin-top: 70px }
+
+/* content wrapper */
+/*#content-wrapper{ background: url(../images/row-top.png) center 0 repeat-x; padding-top: 8px; float: left; width: 100%; position: relative; top: -8px; font-size: 13px; line-height: 18px; color: #fff }*/
+#content-wrapper{ padding-top: 8px; float: left; width: 100%; position: relative; top: -8px; font-size: 13px; line-height: 18px; color: #fff }
+#content-wrapper-in{ background: #252b31 url("../images/noise-bg-dark.jpg"); padding: 40px 0; min-height: 240px }
+
+#content-wrapper-in .content-box{ }
+
+#content-wrapper h2{ color: #fff; font-size: 30px; line-height: 38px; margin-bottom: 20px }
+#content-wrapper h3{ color: #fff; font-size: 22px; font-weight: 400; margin-bottom: 12px }
+#content-wrapper h4{ color: #fff; font-size: 17px; font-weight: 600; margin-bottom: 10px }
+
+#content-wrapper p{ padding-bottom: 16px }
+
+#main-points{ text-align: center }
+#main-points .item{ float: left; border-right: 1px dotted #51555a; width: 201px; padding: 0 25px; height: 206px }
+#main-points .item img{ margin-bottom: 12px }
+#main-points .item p{ text-align: justify }
+#main-points h3{ text-align: center; display: block; width: 100%; padding-bottom: 30px }
+#main-points .item h4{ text-align: center }
+#main-points .first{ padding-left: 0 }
+#main-points .last{ padding-right: 0; border-right: 0 }
+
+/* contact */
+
+/* footer */
+/*#footer{ background: url(../images/row-bottom.png) center 0 repeat-x; float: left; width: 100%; position: relative; top: -8px; padding: 26px 0 26px 0; color: #fff; line-height: 18px }*/
+#footer{ float: left; width: 100%; position: relative; top: -8px; padding: 26px 0 26px 0; color: #fff; line-height: 18px }
+#footer ul{ text-transform: uppercase }
+#footer ul li{ float: left }
+#footer ul li a{ color: #fff; margin-right: 14px }
+#footer ul li a:hover{ color: #8899aa }
+
+/* social icons */
+#footer-icons a{ margin-left: 10px }
+
+.social-icons{ display: block; width: 32px; height: 32px; text-indent: -9999px; background: url(../images/socialbadges.png) }
+.icon-twitter{ background-position: 0px 0px; }
+.icon-twitter:hover{ background-position: -32px 0px; }
+.icon-facebook{ background-position: 0px -32px; }
+.icon-facebook:hover{ background-position: -32px -32px; }
+
+/* messages, errors, notifications */
+div.flash {color: black;background: #FFF9D7;border: 1px solid #E2C822;padding: 1em;margin: 1em 0;}
+a[href^="error:"] {background: red;color: white;}

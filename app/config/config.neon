@@ -1,0 +1,65 @@
+#
+# SECURITY WARNING: it is CRITICAL that this file & directory are NOT accessible directly via a web browser!
+#
+# If you don't protect this directory from direct web access, anybody will be able to see your passwords.
+# http://nette.org/security-warning
+#
+common:
+	parameters:
+		database:
+			driver: pdo_mysql
+			host: localhost
+			dbname: ba_brainarchitect_net
+			user: ba_brainarchitect_net
+			password: r1hwpnk0s8
+
+
+	php:
+		date.timezone: Europe/Prague
+		# session.save_path: "%tempDir%/sessions"
+		# zlib.output_compression: yes
+
+
+	nette:
+		session:
+			autoStart: smart
+
+		database:
+			default:
+				dsn: '%database.driver%:host=%database.host%;dbname=%database.dbname%'
+				user: %database.user%
+				password: %database.password%
+
+
+	services:
+		database: @Nette\Database\Connection
+
+		authenticator: Authenticator( @database::table(users) )
+
+		entityManager:
+			factory: EntityManagerConn::create
+
+		projectModel: 
+			class: \BrainArchitect\Models\Doctrine\Project(@entityManager)
+
+		diagramModel: 
+			class: \BrainArchitect\Models\Doctrine\Diagram(@entityManager)
+
+		userModel: 
+			class: \BrainArchitect\Models\Doctrine\User(@entityManager)
+
+		exporterModel: 
+			class: \BrainArchitect\Models\Exporter()
+
+		importerModel: 
+			class: \BrainArchitect\Models\Importer()
+
+		packageModel: 
+			class: \BrainArchitect\Models\Doctrine\Package(@entityManager)
+
+	factories:
+
+
+production < common:
+
+development < common:

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram>
+    <name>usecase</name>
+    <title>Use Case</title>
+    <version>1.0</version>
+    <package>uml</package>
+    <description>
+        <![CDATA[
+            Class diagram provides creating <strong>Use Case diagram</strong>
+        ]]>
+    </description>    
+    <sources>
+        <file name="Core" type="core" file="joint.dia.uml.usecase.js" />
+        <file name="Toolbar" type="toolbar" file="joint.dia.uml.usecase.toolbar.js" />
+        <file name="Dialogs" type="dialogs" file="joint.dia.uml.usecase.dialogs.js" />
+    </sources>    
+</diagram>

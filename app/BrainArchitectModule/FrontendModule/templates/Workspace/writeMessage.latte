@@ -1,0 +1,34 @@
+{block contentWindow}
+    <div class="title">
+        <div class="p8">
+            <img src="/public/images/icons/talk.png" />
+            New Message
+
+            <a href="#" class="r">close</a>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="p16">
+            {control writeMessageForm}
+        </div>
+    </div>
+
+    {syntax}
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $(".tags").fcbkcomplete({
+                    
+                    addontab: false,
+                    maxitems: 10,
+                    input_min_size: 0,
+                    height: 10,
+                    cache: true,
+                    newel: false,
+                    select_all_text: "select",
+                });
+            });
+        </script>
+    {/syntax}
+
+{/block}

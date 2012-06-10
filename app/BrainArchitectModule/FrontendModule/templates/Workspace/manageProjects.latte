@@ -1,0 +1,33 @@
+{block contentWindow}
+    <div class="title">
+        <div class="p8">
+            <img src="/public/ba/images/icons/talk.png" />
+                Projects
+                <a href="#" id="content-window-close" class="r">close</a>
+        </div>
+    </div>
+    <div class="content" id="projects-list">
+        
+        <ul n:if="$projects">
+            <li n:foreach="$projects as $project">
+                <span class="detail">
+                    <span class='title'><strong>{$project->getTitle()}</strong></span>
+                    <div class="clear"></div>
+                    <span class="desc">{$project->getDescription()|substr:0,50}</span>
+                </span>
+                <span class="actions">
+                    <a href="{plink openProject! $project->getId()}" class="project-manage-project-open system" data-project="{$project->getId()}" title="Open project"><img src="/public/ba/images/icons/edit.png" alt="Open project" /></a>
+                    <a href="{plink deleteProject! $project->getId()}" class="project-manage-project-delete system" data-project="{$project->getId()}" title="Delete project"><img src="/public/ba/images/icons/trash.png" alt="Delete project" /></a>
+                </span>
+                <div class="clear"></div>
+            </li>        
+        </ul>
+
+        <div n:if="!$projects->count()" class="p16">
+            No projects.
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+{/block}

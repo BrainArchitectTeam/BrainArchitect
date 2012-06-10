@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagram>
+    <name>class</name>
+    <title>Class diagram</title>
+    <version>1.0</version>
+    <package>uml</package>
+    <description>
+        <![CDATA[
+            The class diagram is the main building block of object oriented modelling. It is used both for general conceptual modelling of the systematics of the application, and for detailed modelling translating the models into programming code. Class diagrams can also be used for data modeling.[1] The classes in a class diagram represent both the main objects and or interactions in the application and the objects to be programmed.
+        ]]>
+    </description>
+    <sources>
+        <file type="core" file="joint.dia.uml.js" />
+        <file type="toolbar" file="joint.dia.uml.toolbar.js" />
+        <file type="dialogs" file="joint.dia.uml.dialogs.js" />
+    </sources> 
+</diagram>
+

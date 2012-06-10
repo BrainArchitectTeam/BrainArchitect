@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="description" content="Nette Framework web application skeleton">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+        <title>Brain Architect - Online UML Tool</title>
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/css/account.css" type="text/css">
+        <link rel="stylesheet" media="print" href="{$basePath}/public/ba/css/print.css" type="text/css">
+        <link rel="shortcut icon" href="{$basePath}/public/ba/favicon.ico" type="image/x-icon">
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/netteForms.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/jquery.nette.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/jquery.history.js"></script>
+        <script type="text/javascript" src="{$basePath}/public/ba/js/ui.js"></script>
+        
+	{block head}{/block}
+    </head>
+
+    <body>
+        
+        <div id="messages">
+        {snippet flashes div}
+            {foreach $flashes as $flash}
+                <div class="flash {$flash->type}">
+                    <span>{!$flash->message}</span>
+                </div>
+            {/foreach}
+        {/snippet}
+        </div>
+        
+        <div id="wrapper">
+            <div class="content">
+                <div id="header">
+                    <img src="/public/ba/images/logotyp-white.png" alt="Brain Architect - Online UML Tool" />
+                </div>
+            {block content}{/block}
+            </div>
+        </div>                
+    </body>
+</html>

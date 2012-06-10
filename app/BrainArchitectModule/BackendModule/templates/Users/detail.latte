@@ -1,0 +1,41 @@
+{block content}
+
+<h2>User detail</h2>
+
+{include 'submenu.latte'}
+
+<table>
+    <tbody>
+        <tr><td><strong>Username:</strong></td><td> {$entityDetail->getUsername()} -  <a href="{plink edit $entityDetail->getId()}">Edit account</a></td></tr>
+        <tr><td><strong>Email:</strong></td><td> {$entityDetail->getEmail()}</td></tr>
+        <tr><td><strong>Name:</strong></td><td> {$entityDetail->getName()}</td></tr>
+        <tr><td><strong>Surname:</strong></td><td> {$entityDetail->getSurname()}</td></tr>
+        <tr><td><strong>Admin account:</strong></td><td> {if $entityDetail->isAdministrator()}Yes{else}No{/if}</td></tr>
+        <tr><td><strong>Active account:</strong></td><td> {if $entityDetail->isActive()}Yes{else}No{/if}</td></tr>
+        <tr><td><strong>Banned account:</strong></td><td> {if $entityDetail->isBanned()}Yes{else}No{/if}</td></tr>
+   </tbody>
+</table>
+
+<h3>Projects</h3>
+{if $userProjects}
+<table class="list">
+    <thead>
+        <tr>
+            <th>title</th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr n:foreach="$userProjects as $project">
+            <td>{$project->getTitle()}</td>
+            <td><a href="{plink Projects:update $project->getId()}">edit</a></td>
+            <td><a href="{plink Projects:read $project->getId()}">view</a></td>
+        </tr>
+    </tbody>
+</table>
+{else}
+<p>No projects.</p>
+{/if}
+
+

@@ -1,0 +1,35 @@
+{block contentWindow}
+    <div class="title">
+        <div class="p8">
+            <img src="/public/images/icons/talk.png" />
+                Messages
+                <a href="#" id="content-window-close" class="r">close</a>
+        </div>
+    </div>
+    <div class="content">
+        <div id="thread-list">
+            <a href="{plink writeMessage}">WriteMessage</a>
+
+            <ul n:if="$threads">
+                <li n:foreach="$threads as $thread">
+                    
+                    <a href="{plink showThread $thread->getId()}">
+
+                        <img src="/public/images/editor/avatar.jpg" alt="" />
+
+                        <span class="author">
+                            {$thread->getLastMessage()->getAuthor()->getUsername()}
+                        </span> <br />
+                        <span class="message">
+                            {$thread->getLastMessage()->getContent()}
+                        </span>
+                    </a>
+
+                </li>
+            </ul>
+
+            
+
+        </div>
+    </div>
+{/block}

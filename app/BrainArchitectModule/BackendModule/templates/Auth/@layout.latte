@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+        <meta name="description" content="">
+        <meta name="robots" content="{$robots}" n:ifset="$robots">
+
+        <title>Brain Architect - Administration</title>
+
+        <link rel="stylesheet" media="screen,projection,tv" href="{$basePath}/public/ba/admin/css/screen.css" type="text/css">
+
+	{block head}{/block}
+    </head>
+
+    <body>
+
+        <div id="login-form">
+
+        <img alt="Brain Architect - Online UML Tool" src="/public/ba/images/logotyp-white.png">
+
+        {foreach $flashes as $flash}
+            <div class="flash {$flash->type}">{$flash->message}</div>
+        {/foreach}
+
+        {include #content}
+        </div>
+
+    </body>
+</html>

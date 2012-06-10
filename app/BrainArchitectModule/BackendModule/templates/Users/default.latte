@@ -1,0 +1,36 @@
+{block content}
+
+<h2>Users</h2>
+
+{include 'submenu.latte'}
+
+<table class="list" n:if="$list">
+    <thead>
+        <tr>
+            <th>Account created</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr n:foreach="$list as $item">
+            <td>{$item->getRegistered()|date:'%d.%m.%Y, %H:%M:%S'}</td>
+            <td>{$item->getUsername()}</td>
+            <td>{$item->getEmail()}</td>
+            <td>{$item->getName()}</td>
+            <td>{$item->getSurname()}</td>
+            <td>{if $item->isActive()}<a href="{plink deactivate! $item->getId()}">deactivate</a>{else}<a href="{plink activate! $item->getId()}">activate</a>{/if}</td>
+            <td>{if $item->isBanned()}<a href="{plink unban! $item->getId()}">unban</a>{else}<a href="{plink ban! $item->getId()}">ban</a>{/if}</td>
+            <td><a href="{plink detail $item->getId()}">show detail</a></td>
+            <td><a href="{plink edit $item->getId()}">edit</a></td>
+            <td><a href="{plink delete $item->getId()}">delete</a></td>
+        </tr>
+    </tbody>
+</table>

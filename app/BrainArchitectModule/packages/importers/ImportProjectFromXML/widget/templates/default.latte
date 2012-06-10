@@ -1,0 +1,46 @@
+{block}
+
+<div class="title">
+    <div class="p8">
+        Import diagram from XML
+        <a class="r" id="content-window-close" href="#">close</a>
+    </div>
+</div>
+
+<div class="tabs">
+    <div class="l">
+        <a class="ajax import-diagram-from-xml" n:href="import">IMPORT</a>
+    </div>
+    <div class="clear"></div>
+</div>
+
+<div id="result-window">
+    <div class="p12">
+        <textarea id="import-diagram-from-xml-content" placeholder="Insert XML code" style="width: 90%; padding: 5%; float: left; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2) inset"></textarea>
+        <div class="clear"></div>
+    </div>
+    
+</div>
+
+
+{syntax}
+
+<script type="text/javascript">
+    $(document).ready(function(){        
+
+        $('.import-diagram-from-xml').click(function(){
+
+            var data = $("#import-diagram-from-xml-content").val();
+
+            console.log(data);
+
+            App.sendImporterData(this.href, {
+                data: data
+            });
+
+            return false;
+        });
+
+    });
+</script>
+{/syntax}

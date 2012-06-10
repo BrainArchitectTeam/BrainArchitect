@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package>
+    <name>ImportProjectFromXML</name>
+    <title>Import project from XML</title>    
+    <version>1.0</version>
+    <author>Brain Architect Team</author>
+    <type>project importer</type>
+    <label>From XML</label>
+    <description>Enables import project from xml.</description>
+    <resources>
+        <item src='register.js' />
+    </resources>
+</package>
