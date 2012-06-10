@@ -1,8 +1,9 @@
 Brain Architect - Online UML Tool
 ===========================
 
-For more information, please visit [homepage] of Brain Architect(http://www.brainarchitect.net)
-[Author: Franta Toman](http://www.frantatoman.cz)
+For more information, please visit [http://www.brainarchitect.net](http://www.brainarchitect.net)
+
+Author: [Franta Toman](http://www.frantatoman.cz)
 
 Requirements
 ------------
